@@ -1,0 +1,80 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Scholarship Monthly Planner 2022-2023",
+        "author": "Marianne Ragins",
+        "image": "https://m.media-amazon.com/images/I/61rSf0vP9qL._SY342_.jpg",
+        "review": "A comprehensive planner designed to help students track scholarships and deadlines efficiently.",
+        "totalPages": 120,
+        "rating": 4.7,
+        "category": "Educational",
+        "tags": ["Planner", "Scholarship"],
+        "publisher": "Independent",
+        "yearOfPublishing": 2022
+    },
+    {
+        "bookId": 2,
+        "bookName": "Spine of the Dragon",
+        "author": "Kevin J. Anderson",
+        "image": "https://shorturl.at/6avJR",
+        "review": "An epic fantasy tale of war, prophecy, and dragons that will enthrall fans of the genre.",
+        "totalPages": 528,
+        "rating": 4.3,
+        "category": "Fantasy",
+        "tags": ["Epic", "Adventure"],
+        "publisher": "Tor Books",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 3,
+        "bookName": "Why Do You Hate Money?",
+        "author": "Joey Percia",
+        "image": "https://shorturl.at/Tnc60",
+        "review": "A practical guide on how to increase your sales and improve your business mindset.",
+        "totalPages": 200,
+        "rating": 4.6,
+        "category": "Business",
+        "tags": ["Sales", "Marketing"],
+        "publisher": "Independent",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 4,
+        "bookName": "Annotated Texas Family Code 2019",
+        "author": "Texas Family Law Foundation",
+        "image": "https://shorturl.at/qdDFF",
+        "review": "An essential resource for understanding and applying the Texas Family Code.",
+        "totalPages": 1200,
+        "rating": 4.5,
+        "category": "Law",
+        "tags": ["Legal", "Reference"],
+        "publisher": "Texas Family Law Foundation",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Lost Art of Good Conversation",
+        "author": "Sakyong Mipham",
+        "image": "https://shorturl.at/ETFYF",
+        "review": "A profound guide to building meaningful relationships through the power of conversation.",
+        "totalPages": 240,
+        "rating": 4.4,
+        "category": "Self-Help",
+        "tags": ["Communication", "Relationships"],
+        "publisher": "Harmony",
+        "yearOfPublishing": 2017
+    },
+    {
+        "bookId": 6,
+        "bookName": "Cold-Case Christianity",
+        "author": "J. Warner Wallace",
+        "image": "https://shorturl.at/zXlGs",
+        "review": "A fascinating look at the evidence for Christianity through the lens of a cold-case detective.",
+        "totalPages": 256,
+        "rating": 4.6,
+        "category": "Religion",
+        "tags": ["Apologetics", "Christianity"],
+        "publisher": "David C Cook",
+        "yearOfPublishing": 2013
+    }
+]
