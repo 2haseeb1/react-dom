@@ -6,7 +6,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Work Sans', 'sans-serif'], 
+        playfair: ['Playfair Display', 'cursive'],
+      },
+    },
   }, daisyui: {
     themes: ["light", "dark", "cupcake"],
   },
