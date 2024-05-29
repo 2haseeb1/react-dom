@@ -11,6 +11,10 @@ export default {
         sans: ['Work Sans', 'sans-serif'], 
         playfair: ['Playfair Display', 'cursive'],
       },
+      colors: {
+        'primary': '#23BE0A',
+        'secondary': '#59C6D2',
+      },
     },
   }, daisyui: {
     themes: ["light", "dark", "cupcake"],
