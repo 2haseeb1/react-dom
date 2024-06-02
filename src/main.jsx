@@ -8,9 +8,10 @@ import Home from "./components/Home";
 import PagesToRead from "./components/PagesToRead";
 import ListedBooks from "./components/ListedBooks";
 import ShowDetailsBook from "./components/ShowDetailsBook";
-
 import TabData from "./components/WishList";
 import ErrorPage from "./components/ErrorPage";
+import Genres from "./components/Genres";
+import Authors from "./components/Authors";
 
 const fetchBookData = async () => {
   try {
@@ -31,11 +32,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
-    children: [
-      
-
-      
-    ]
   },
   {
     path: "/pages-to-read",
@@ -47,12 +43,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/wish-list",
-    element: <TabData/>,
+    element: <TabData />,
   },
   {
     path: "/book/book-details/:bookId",
     element: <ShowDetailsBook />,
     loader: fetchBookData,
+  },
+  {
+    path: "/authors", 
+    element: <Authors/>,
+  },
+  {
+    path: "/genres", 
+    element: <Genres/>,
   },
 ]);
 

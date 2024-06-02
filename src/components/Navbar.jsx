@@ -13,6 +13,8 @@ const Navbar = () => {
               <NavItem to="/" name="Home" />
               <NavItem to="/listedbooks" name="Listed Books" />
               <NavItem to="/pagestoread" name="Pages to Read" />
+              <NavItem to="/authors" name="Authors" /> 
+              <NavItem to="/genres" name="Genres" /> 
             </ul>
           </div>
           <p className=" text-xl">BookVibe</p>
@@ -23,6 +25,8 @@ const Navbar = () => {
             <NavItem to="/view-list" name="Listed Books" />
             <NavItem to="/pages-to-read" name="Pages to Read" />
             <NavItem to="/wish-list" name="WishList" />
+            <NavItem to="/authors" name="Authors" /> 
+            <NavItem to="/genres" name="Genres" /> 
           </ul>
         </div>
         <div className="navbar-end flex gap-2">
@@ -31,8 +35,8 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const NavItem = ({ to, name }) => {
   return (
@@ -63,16 +67,20 @@ const NavbarTwo = () => {
               <NavItem to="/" name="Home" />
               <NavItem to="/listedbooks" name="Listed Books" />
               <NavItem to="/pagestoread" name="Pages to Read" />
+              <NavItem to="/authors" name="Authors" /> 
+              <NavItem to="/genres" name="Genres" /> 
             </ul>
           </div>
           <p className=" text-xl">BookVibe</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-2">
-            <NavItemTwo to="/" name="Home" />
-            <NavItemTwo to="/view-list" name="Listed Books" />
-            <NavItemTwo to="/pages-to-read" name="Pages to Read" />
-            <NavItemTwo to="/wish-list" name="WishList" />
+            <NavItem to="/" name="Home" />
+            <NavItem to="/view-list" name="Listed Books" />
+            <NavItem to="/pages-to-read" name="Pages to Read" />
+            <NavItem to="/wish-list" name="WishList" />
+            <NavItem to="/authors" name="Authors" /> 
+            <NavItem to="/genres" name="Genres" /> 
           </ul>
         </div>
         <div className="navbar-end flex gap-2">
@@ -81,8 +89,8 @@ const NavbarTwo = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const NavItemTwo = ({ to, name }) => {
   return (
@@ -91,8 +99,8 @@ const NavItemTwo = ({ to, name }) => {
         to={to} 
         className={({ isActive }) =>
           isActive
-            ? "active btn btn-outline border-2 border-[#23BE0A]"
-            : ""
+            ? "active btn btn-outline border-2 border-[#23BE0A]  text-[#23BE0A] text-[18px] font-sans font-[600]"
+           : "py-[14px] text-[#131313cc] fo text-[18px] font-sans font-[400]"
         }
       >
         {name}

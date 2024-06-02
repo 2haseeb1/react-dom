@@ -1,3 +1,4 @@
+import TabData from "./WishList";
 
 
 const ListedBooks = () => {
@@ -6,8 +7,7 @@ const ListedBooks = () => {
   return (
     <>
     
-    
-    
+   <TabData></TabData>
     </>
   );
 };
