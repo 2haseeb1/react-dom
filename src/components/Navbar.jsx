@@ -108,5 +108,6 @@ const NavItemTwo = ({ to, name }) => {
     </li>
   );
 };
+export {NavItemTwo}
 export {NavbarTwo}
 export default Navbar;

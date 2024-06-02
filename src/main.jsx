@@ -9,10 +9,10 @@ import PagesToRead from "./components/PagesToRead";
 import ListedBooks from "./components/ListedBooks";
 import ShowDetailsBook from "./components/ShowDetailsBook";
 import TabData from "./components/WishList";
-import ErrorPage from "./components/ErrorPage";
+
 import Genres from "./components/Genres";
 import Authors from "./components/Authors";
-
+import ErrorPage from './components/ErrorPage'
 const fetchBookData = async () => {
   try {
     const response = await fetch('booksData.json'); 
