@@ -24,7 +24,7 @@ const Navbar = () => {
             <NavItem to="/" name="Home" />
             <NavItem to="/view-list" name="Listed Books" />
             <NavItem to="/pages-to-read" name="Pages to Read" />
-            <NavItem to="/wish-list" name="WishList" />
+           
             <NavItem to="/authors" name="Authors" /> 
             <NavItem to="/genres" name="Genres" /> 
           </ul>
@@ -78,7 +78,7 @@ const NavbarTwo = () => {
             <NavItem to="/" name="Home" />
             <NavItem to="/view-list" name="Listed Books" />
             <NavItem to="/pages-to-read" name="Pages to Read" />
-            <NavItem to="/wish-list" name="WishList" />
+           
             <NavItem to="/authors" name="Authors" /> 
             <NavItem to="/genres" name="Genres" /> 
           </ul>

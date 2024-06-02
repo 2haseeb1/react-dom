@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import PagesToRead from "./components/PagesToRead";
 import ListedBooks from "./components/ListedBooks";
 import ShowDetailsBook from "./components/ShowDetailsBook";
-import TabData from "./components/WishList";
+
 
 import Genres from "./components/Genres";
 import Authors from "./components/Authors";
@@ -41,10 +41,7 @@ const router = createBrowserRouter([
     path: "/view-list",
     element: <ListedBooks />,
   },
-  {
-    path: "/wish-list",
-    element: <TabData />,
-  },
+ 
   {
     path: "/book/book-details/:bookId",
     element: <ShowDetailsBook />,
