@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+
 import Header from "./Header";
 import Banner from "./Banner";
 import ShowBooks from "./ShowBooks";
@@ -8,7 +8,7 @@ const Home = () => {
       <Header></Header>
       <Banner></Banner>
       <ShowBooks></ShowBooks>
-      <Outlet></Outlet>
+     
     </div>
   );
 };

@@ -1,0 +1,1 @@
+Show a toast on the first click to add to local storage. Show another alert on subsequent clicks indicating it’s already added. Ensure a book marked as "Read" can't be added to "Wishlist" and vice versa.

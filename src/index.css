@@ -6,10 +6,56 @@
 @tailwind utilities;
 
 
-body{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
 
+.btn-success{
+    background: #23BE0A;
+    color:#fff;
+    width: 145px;
+    height:52px;
+    border-radius: 8px;
+
+}
+.max-w-xs{
+    width:140px;
+}
+   option{
+   
+    font-size: 16px;
+    font-family: Work Sans;
+   
+    font-weight: 400;
+    color:#131313;
    
 
+
+    
+   
+    
+    
+    
+
+   
+    
+   
+   
+
+
+    
+    
+   
+
+
+   }
+.bg-purple-300{
+    @apply bg-slate-300
+    
+}
   
   
 
@@ -17,4 +63,3 @@ body{
 
  
     
-}

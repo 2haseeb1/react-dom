@@ -1,0 +1,33 @@
+ color:#1313130d
+
+ <div className='flex gap-8 mb-[30px]  border-2 border-red-500 rounded-[24px] py-2  h-[277px] space-y-3'>
+        <div className='w-[230px] h-[230px] bg-gray-300 rounded-[24px]flex justify-center items-center'>
+        <div className='flex justify-center items-center'>
+         <img src={item.image} alt=""  className='w-[129px] h-[172px] object-cover'/>
+        </div>
+
+        </div>
+      
+        <div className='flex-1 bg-green-300'>
+        <p className='text-[#131313] font-playfair text-[24px] font-[700]'>  {item.bookName}  </p>
+        <p className='font-sans text-[#131313cc] text-base font-[500]'>By: <span className=''>{item.author}</span></p>
+          <p className='flex gap-2 text-[#131313] font-bold font-sans'>Tag <span className='space-x-2 flex text-[#23BE0A] font-[500]'>{item.tags.slice(0, 2).map((tag, idx) => <Tag key={idx} tag={tag}></Tag>)}</span><span className='ml-[-95px]'><span className='flex text-[#131313cc] font-[500] font-sans gap-1'><img src={location} alt="" className='w-[20px]' />{`year of publishing:${item.yearOfPublishing}`}</span> </span></p>
+          <span className='flex gap-1'><img src={profile} alt="" className="w-[20px]" /><span className='text-[#13131399]'>{`publisher:${item.publisher}`}</span><span className='flex text-[#13131399]'><img src={page} alt="" />{`page ${item.totalPages}`}</span></span>
+          <hr className='w-[1009px] my-3'/>
+          <div className='flex'>
+            
+            <div className='flex'>
+            <p className='bg-[#328eff26] text-[#328EFF] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center'>{`Category:${item.category}`}</p> 
+
+            </div>
+            <div className='flex'>
+            <p className='bg-[#ffac3326] text-[#FFAC33] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center'>{`Rating:${item.rating}`}</p> 
+
+            </div>
+            <div className='flex'>
+            <p className='bg-[#23BE0A] text-[#fff] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[25px]pl-3 justify-center font-[500]'>{`View Details`}</p> 
+
+            </div>
+          </div>
+        </div>
+    </div>

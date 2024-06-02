@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ratings from '../assets/rating.svg'
 import { Link } from "react-router-dom";
 const ShowBooks = () => {
-  const [books, setBooks] = useState([]);
+   const [books, setBooks] = useState([]); 
 
   useEffect(() => {
     fetch("booksData.json")
@@ -12,7 +12,7 @@ const ShowBooks = () => {
 
   return (
     <div className="grid grid-cols-3 gap-5">
-     {books.map(book=><Book key={book.bookId} book={book}></Book>)}
+      {books.map(book=><Book key={book.bookId} book={book}></Book>)} 
     </div>
   );
 };
