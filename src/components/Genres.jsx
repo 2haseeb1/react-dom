@@ -44,10 +44,10 @@ const Genres = () => {
   };
 
   return (
-    <div className="genres-container p-8 w-[1170px] mx-auto">
+    <div className="genres-container p-8 w-[80%] md:w-[1170px] mx-auto">
       <Navbar></Navbar>
       <h1 className="text-3xl font-bold mb-6 text-center">Genres</h1>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row items-center justify-center">
         <ul className="w-1/3 pr-4">
           {genresData.map(genre => (
             <li 

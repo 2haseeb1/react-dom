@@ -32,10 +32,10 @@ const Authors = () => {
   };
 
   return (
-    <div className="authors-container w-[1170px] mx-auto">
+    <div className="authors-container w-[80%] md:w-[1170px] mx-auto">
       <Navbar></Navbar>
       <h1 className="text-2xl font-bold mb-4">Authors</h1>
-      <div className="flex">
+      <div className="flex md:flex-row flex-col items-center">
         <ul className="w-1/3 pr-4">
           {authorsData.map(author => (
             <li 

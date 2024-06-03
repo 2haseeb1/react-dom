@@ -4,15 +4,15 @@ import { toast } from 'react-toastify';
 import { NavbarTwo } from './Navbar';
 
 const ShowDetailsBook = () => {
-  const [isInWishlist, setIsInWishlist] = useState(false);
+  
   const [isRead, setIsRead] = useState(false);
   const books = useLoaderData();
   const { bookId } = useParams();
   const book = books.find(book => book.bookId === parseInt(bookId));
 
   useEffect(() => {
-    const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
-    setIsInWishlist(wishlist.some(item => item.bookId === book.bookId));
+   
+   
     
     const readList = JSON.parse(localStorage.getItem('readList') || '[]');
     setIsRead(readList.some(item => item.bookId === book.bookId));
@@ -30,16 +30,13 @@ const ShowDetailsBook = () => {
     } else {
       const updatedWishlist = [...wishlist, book];
       localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
-      setIsInWishlist(true);
+    
       toast.success('Book added to wishlist!');
     }
   };
 
   const handleAddToRead = () => {
-    if (isInWishlist) {
-      toast.warn('This book is already in your Wishlist and cannot be marked as Read.');
-      return;
-    }
+  
 
     const readList = JSON.parse(localStorage.getItem('readList') || '[]');
     if (readList.some(item => item.bookId === book.bookId)) {
@@ -66,9 +63,9 @@ const ShowDetailsBook = () => {
   return (
     <>
       <NavbarTwo />
-      <div className="w-[1170px] mx-auto mt-[60px]">
-        <div className="flex justify-between gap-8">
-          <div className="w-[573px] bg-[#1313130d] h-[711px] flex justify-center items-center">
+      <div className="w-[60%] md:w-[1170px] mx-auto mt-[30px] md:mt-[60px]">
+        <div className="flex flex-col  md:flex-row justify-between gap-4 md:gap-8">
+          <div className="w-[378px] md:w-[573px] bg-[#1313130d] h-[711px] flex justify-center items-center">
             <img src={book.image} alt={book.bookName} />
           </div>
           <div className="flex-1">
@@ -113,12 +110,13 @@ const ShowDetailsBook = () => {
               </table>
             </div>
             <div className="flex gap-4 pb-5 mb-8 mt-5">
-              <button className="btn btn-outline text-[18px] text-[#131313] font-sans font--sans font-[500]" onClick={handleAddToWishlist}>
-                {isInWishlist ? 'Already in Wishlist' : 'Add to Wishlist'}
+            <button className="btn btn-outline text-[18px] text-[#131313] font-sans font-[500]" onClick={handleAddToRead}>
+                {`Read`}
               </button>
-              <button className="btn btn-outline text-[18px] text-[#131313] font-sans font-[500]" onClick={handleAddToRead}>
-                {isRead ? 'Already Read' : 'Mark as Read'}
+              <button className="btn btn-outline text-[18px]  font-sans font--sans font-[500] bg-[#50B1C9] text-white" onClick={handleAddToWishlist}>
+                {`Wishlist`}
               </button>
+            
             </div>
           </div>
         </div>

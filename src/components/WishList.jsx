@@ -1,9 +1,10 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import location from '../assets/location.svg';
 import profile from '../assets/profile.svg';
 import page from '../assets/page.svg';
 import { FiChevronDown } from 'react-icons/fi';
+import Tag from './Tag'; 
 
 const TabData = () => {
   const [activeTab, setActiveTab] = useState('read');
@@ -50,11 +51,11 @@ const TabData = () => {
   };
 
   return (
-    <div className='w-[1170px] mx-auto'>
+    <div className='w-[90%] md:w-[80%] lg:w-[1170px] mx-auto'>
       <Navbar />
 
-      <h3 className='text-center text-[#131313] text-[28px] font-[700] bg-[#1313130d] py-2 my-[30px]'>Home</h3>
-      <div className='flex justify-center mb-[100px]'>
+      <h3 className='text-center text-[#131313] text-[20px] md:text-[24px] lg:text-[28px] font-[700] bg-[#1313130d] py-2 my-[20px] md:my-[30px]'>Home</h3>
+      <div className='flex justify-center mb-[50px] md:mb-[100px]'>
         <div className="relative w-[145px]">
           <select
             className="select select-info pl-3 w-full bg-[#23BE0A] rounded-md px-[5px] text-white font-[600] border-none outline-none appearance-none"
@@ -70,10 +71,10 @@ const TabData = () => {
         </div>
       </div>
 
-      <div role="tablist" className="tabs tabs-lifted">
+      <div role="tablist" className="tabs tabs-lifted flex flex-col md:flex-row justify-center">
         <a role="tab" className={`tab ${activeTab === 'wishlist' ? 'tab-active' : ''}`} onClick={() => handleTabChange('wishlist')}>Wishlist Books</a>
         <a role="tab" className={`tab ${activeTab === 'read' ? 'tab-active' : ''}`} onClick={() => handleTabChange('read')}>Read Books</a>
-        <a role="tab" className={`tab ${activeTab === 'content' ? 'tab-active' : ''}`} onClick={() => handleTabChange('content')}>Content</a>
+   
       </div>
 
       {activeTab === 'wishlist' && <WishListData data={wishlistData} />}
@@ -86,7 +87,7 @@ export default TabData;
 
 const ReadData = ({ data }) => {
   return (
-    <div>
+    <div className='w-full'>
       {data.map((item, idx) => <ReadItemData key={idx} item={item} />)}
     </div>
   );
@@ -94,30 +95,30 @@ const ReadData = ({ data }) => {
 
 const ReadItemData = ({ item }) => {
   return (
-    <div className='flex gap-8 mb-[30px] border-2 border-[#13131326] rounded-[16px] py-2 h-[277px] space-y-3 items-center'>
-      <div className='w-[230px] h-[230px] bg-gray-300 rounded-[24px] flex justify-center items-center ml-6'>
-        <img src={item.image} alt="" className='w-[129px] h-[172px] object-cover' />
+    <div className='flex flex-col lg:flex-row gap-4 md:gap-8 mb-8 border-2 border-gray-200 rounded-2xl py-2 h-auto lg:h-72 items-center'>
+      <div className='flex-shrink-0 w-36 h-36 md:w-56 md:h-56 bg-gray-300 rounded-2xl flex justify-center items-center ml-[30px]'>
+        <img src={item.image} alt="" className='w-24 h-32 md:w-32 md:h-44 object-cover' />
       </div>
-      <div className='h-[230px] space-y-[12px] w-[750px]'>
-        <p className='text-[#131313] font-playfair text-[24px] font-[700]'>{item.bookName}</p>
-        <p className='font-sans text-[#131313cc] text-base font-[500]'>By: <span>{item.author}</span></p>
-        <p className='flex gap-2 text-[#131313] font-bold font-sans'>
-          Tag <span className='space-x-2 flex text-[#23BE0A] font-[500]'>{item.tags.slice(0, 2).map((tag, idx) => <Tag key={idx} tag={tag} />)}</span>
-          <span className='ml-[-95px]'>
-            <span className='flex text-[#131313cc] font-[500] font-sans gap-1'><img src={location} alt="" className='w-[20px]' />{`year of publishing: ${item.yearOfPublishing}`}</span>
+      <div className='flex-grow space-y-3 w-full lg:w-3/4 px-4 md:px-0'>
+        <p className='text-gray-900 font-playfair text-2xl md:text-3xl font-bold'>{item.bookName}</p>
+        <p className='font-sans text-gray-700 text-sm md:text-base font-medium'>By: <span>{item.author}</span></p>
+        <p className='flex flex-col md:flex-row gap-2 text-gray-900 font-bold font-sans'>
+          Tag <span className='flex gap-2 text-green-600 font-medium'>{item.tags ? item.tags.slice(0, 2).map((tag, idx) => <Tag key={idx} tag={tag} />) : null}</span>
+          <span className='mt-2 md:mt-0 md:ml-2'>
+            <span className='flex text-gray-700 font-medium font-sans gap-1'><img src={location} alt="" className='w-5' />{`year of publishing: ${item.yearOfPublishing}`}</span>
           </span>
         </p>
-        <span className='flex gap-1'><img src={profile} alt="" className="w-[20px]" /><span className='text-[#13131399]'>{`publisher: ${item.publisher}`}</span><span className='flex text-[#13131399]'><img src={page} alt="" />{`page ${item.totalPages}`}</span></span>
-        <hr className='w-[750px] my-5' />
-        <div className='flex mt-[24px] gap-3'>
+        <span className='flex gap-1 items-center'><img src={profile} alt="" className="w-5" /><span className='text-gray-600'>{`publisher: ${item.publisher}`}</span><span className='flex text-gray-600'><img src={page} alt="" />{`page ${item.totalPages}`}</span></span>
+        <hr className='w-[calc(100%-40px)] my-5' />
+        <div className='flex flex-wrap gap-3'>
           <div className='flex'>
-            <p className='bg-[#328eff26] text-[#328EFF] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center'>{`Category: ${item.category}`}</p>
+            <p className='bg-blue-100 text-blue-500 px-3 py-1 rounded-3xl flex items-center text-base justify-center flex-grow'>{`Category: ${item.category}`}</p>
           </div>
           <div className='flex'>
-            <span className='bg-[#ffac3326] text-[#FFAC33] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center '>{`Rating: ${item.rating}`}</span>
+            <span className='bg-yellow-100 text-yellow-500 px-3 py-1 rounded-3xl flex items-center text-base justify-center flex-grow '>{`Rating: ${item.rating}`}</span>
           </div>
           <div className='flex'>
-            <p className='bg-[#23BE0A] text-[#fff] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[25px]pl-3 justify-center font-[500]'>{`View Details`}</p>
+            <p className='bg-green-600 text-white px-3 py-1 rounded-3xl flex items-center text-base md:text-lg justify-center font-medium'>{`View Details`}</p>
           </div>
         </div>
       </div>
@@ -127,7 +128,7 @@ const ReadItemData = ({ item }) => {
 
 const WishListData = ({ data }) => {
   return (
-    <div className='w-[1170px] mx-auto mt-[20px]'>
+    <div className='w-full mt-[20px]'>
       {data.map((item, idx) => <WishListComponent key={idx} item={item} />)}
     </div>
   );
@@ -135,30 +136,30 @@ const WishListData = ({ data }) => {
 
 const WishListComponent = ({ item }) => {
   return (
-    <div className='flex gap-8 mb-[30px] border-2 border-[#13131326] rounded-[16px] py-2 h-[277px] space-y-3 items-center'>
-      <div className='w-[230px] h-[230px] bg-gray-300 rounded-[24px] flex justify-center items-center ml-6'>
-        <img src={item.image} alt="" className='w-[129px] h-[172px] object-cover' />
+    <div className='flex flex-col lg:flex-row gap-4 md:gap-8 mb-8 border-2 border-gray-200 rounded-2xl py-2 h-auto lg:h-72 items-center'>
+      <div className='flex-shrink-0 w-36 h-36 md:w-56 md:h-56 bg-gray-300 rounded-2xl flex justify-center items-center ml-[30px]'>
+        <img src={item.image} alt="" className='w-24 h-32 md:w-32 md:h-44 object-cover' />
       </div>
-      <div className='h-[230px] space-y-[12px] w-[750px]'>
-        <p className='text-[#131313] font-playfair text-[24px] font-[700]'>{item.bookName}</p>
-        <p className='font-sans text-[#131313cc] text-base font-[500]'>By: <span>{item.author}</span></p>
-        <p className='flex gap-2 text-[#131313] font-bold font-sans'>
-          Tag <span className='space-x-2 flex text-[#23BE0A] font-[500]'>{item.tags.slice(0, 2).map((tag, idx) => <Tag key={idx} tag={tag} />)}</span>
-          <span className='ml-[-95px]'>
-            <span className='flex text-[#131313cc] font-[500] font-sans gap-1'><img src={location} alt="" className='w-[20px]' />{`year of publishing: ${item.yearOfPublishing}`}</span>
+      <div className='flex-grow space-y-3 w-full lg:w-3/4 px-4 md:px-0'>
+        <p className='text-gray-900 font-playfair text-2xl md:text-3xl font-bold'>{item.bookName}</p>
+        <p className='font-sans text-gray-700 text-sm md:text-base font-medium'>By: <span>{item.author}</span></p>
+        <div className='flex flex-col md:flex-row gap-2 text-gray-900 font-bold font-sans'>
+          Tag <div className='flex gap-2 text-green-600 font-medium '>{item.tags ? item.tags.slice(0, 2).map((tag, idx) => <Tag key={idx} tag={tag} />) : null}</div>
+          <span className='mt-2 md:mt-0 md:ml-2'>
+            <span className='flex text-gray-700 font-medium font-sans gap-1'><img src={location} alt="" className='w-5' />{`year of publishing: ${item.yearOfPublishing}`}</span>
           </span>
-        </p>
-        <span className='flex gap-1'><img src={profile} alt="" className="w-[20px]" /><span className='text-[#13131399]'>{`publisher: ${item.publisher}`}</span><span className='flex text-[#13131399]'><img src={page} alt="" />{`page ${item.totalPages}`}</span></span>
-        <hr className='w-[750px] my-5' />
-        <div className='flex mt-[24px] gap-3'>
+        </div>
+        <span className='flex gap-1 items-center'><img src={profile} alt="" className="w-5" /><span className='text-gray-600'>{`publisher: ${item.publisher}`}</span><span className='flex text-gray-600'><img src={page} alt="" />{`page ${item.totalPages}`}</span></span>
+        <hr className='w-full my-5' />
+        <div className='flex flex-wrap gap-3 w-full'>
           <div className='flex'>
-            <p className='bg-[#328eff26] text-[#328EFF] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center'>{`Category: ${item.category}`}</p>
+            <p className='bg-blue-100 text-blue-500 px-1 rounded-3xl w-43 md:w-50 h-10 flex items-center text-base justify-center '>{`Category: ${item.category}`}</p>
           </div>
           <div className='flex'>
-            <span className='bg-[#ffac3326] text-[#FFAC33] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[16px]pl-3 justify-center '>{`Rating: ${item.rating}`}</span>
+            <span className='bg-yellow-100 text-yellow-500 px-1 rounded-3xl w-32 md:w-44 h-10 flex items-center text-base justify-center '>{`Rating: ${item.rating}`}</span>
           </div>
           <div className='flex'>
-            <p className='bg-[#23BE0A] text-[#fff] px-1 rounded-[30px] w-[174px] h-[41px] flex items-center text-[25px]pl-3 justify-center font-[500]'>{`View Details`}</p>
+            <p className='bg-green-600 text-white px-1 rounded-3xl w-32 md:w-44 h-10 flex items-center text-base md:text-lg justify-center font-medium'>{`View Details`}</p>
           </div>
         </div>
       </div>
@@ -166,12 +167,8 @@ const WishListComponent = ({ item }) => {
   );
 };
 
-const Tag = ({ tag }) => {
-  return (
-    <div className='space-x-3 flex gap-3 w-[250px]'>
-      <p className='bg-[#23be0a0d] py-1 px-3 rounded-[30px]'>#{tag}</p>
-    </div>
-  );
-};
 
-export { Tag, ReadItemData, ReadData, WishListComponent, WishListData };
+
+
+
+export { ReadItemData, ReadData, WishListComponent, WishListData,Tag };
