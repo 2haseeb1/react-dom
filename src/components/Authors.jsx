@@ -1,5 +1,6 @@
 
 import  { useState } from 'react';
+import Navbar from './Navbar';
 
 const authorsData = [
   {
@@ -31,7 +32,8 @@ const Authors = () => {
   };
 
   return (
-    <div className="authors-container">
+    <div className="authors-container w-[1170px] mx-auto">
+      <Navbar></Navbar>
       <h1 className="text-2xl font-bold mb-4">Authors</h1>
       <div className="flex">
         <ul className="w-1/3 pr-4">

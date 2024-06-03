@@ -11,7 +11,7 @@ const ShowBooks = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-[61%] md:w-[1170px] mx-auto ">
       {books.map(book=><Book key={book.bookId} book={book}></Book>)} 
     </div>
   );

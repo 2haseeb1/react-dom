@@ -15,12 +15,7 @@ const TriangleBar = (props) => {
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-const generateRandomBook = () => {
-  const bookNames = ['Book A', 'Book B', 'Book C', 'Book D', 'Book E', 'Book F', 'Book G'];
-  const randomBookName = bookNames[Math.floor(Math.random() * bookNames.length)];
-  const totalPages = Math.floor(Math.random() * 500) + 100; // Random number between 100 and 600
-  return { bookName: randomBookName, totalPages };
-};
+
 
 const generateRandomColor = () => {
   return '#' + Math.floor(Math.random() * 16777215).toString(16); // Random hexadecimal color
@@ -33,18 +28,12 @@ const PagesToRead = () => {
     const readList = localStorage.getItem('readList');
     if (readList) {
       setBooks(JSON.parse(readList));
-    } else {
-      generateRandomData();
-    }
+    } 
   }, []);
 
  
 
-  const generateRandomData = () => {
-    const data = Array.from({ length: 7 }, () => generateRandomBook());
-    setBooks(data);
-    localStorage.setItem('readList', JSON.stringify(data));
-  };
+
 
   return (
     <div className="pages-to-read-container" style={{ width: '100%', height: '100%' }}>

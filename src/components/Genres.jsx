@@ -1,5 +1,6 @@
 
 import  { useState } from 'react';
+import Navbar from './Navbar';
 
 const genresData = [
   {
@@ -43,7 +44,8 @@ const Genres = () => {
   };
 
   return (
-    <div className="genres-container p-8 max-w-4xl mx-auto">
+    <div className="genres-container p-8 w-[1170px] mx-auto">
+      <Navbar></Navbar>
       <h1 className="text-3xl font-bold mb-6 text-center">Genres</h1>
       <div className="flex">
         <ul className="w-1/3 pr-4">

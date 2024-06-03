@@ -1,9 +1,9 @@
 import  { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import arrow from '../assets/arrow.svg';
 import location from '../assets/location.svg';
 import profile from '../assets/profile.svg';
 import page from '../assets/page.svg';
+import { FiChevronDown } from 'react-icons/fi';
 
 const TabData = () => {
   const [activeTab, setActiveTab] = useState('read');
@@ -40,8 +40,7 @@ const TabData = () => {
     } else if (sortValue === 'pages') {
       sortedReadData.sort((a, b) => b.totalPages - a.totalPages);
       sortedWishlistData.sort((a, b) => b.totalPages - a.totalPages);
-    }
-     else if (sortValue === 'year') {
+    } else if (sortValue === 'year') {
       sortedReadData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
       sortedWishlistData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
     }
@@ -56,14 +55,9 @@ const TabData = () => {
 
       <h3 className='text-center text-[#131313] text-[28px] font-[700] bg-[#1313130d] py-2 my-[30px]'>Home</h3>
       <div className='flex justify-center mb-[100px]'>
-        <div>
+        <div className="relative w-[145px]">
           <select
-            className="select select-info pl-3 w-[145px] bg-cover bg-[#23BE0A] rounded-md px-[5px] text-white font-[600] border-none outline-none"
-            style={{
-              backgroundImage: `url(${arrow})`,
-              backgroundSize: '24px',
-              backgroundCover: 'cover',
-            }}
+            className="select select-info pl-3 w-full bg-[#23BE0A] rounded-md px-[5px] text-white font-[600] border-none outline-none appearance-none"
             onChange={handleSortChange}
             value={sortOption}
           >
@@ -72,6 +66,7 @@ const TabData = () => {
             <option value="pages" className="font-sans bg-gray-300">Number of Pages</option>
             <option value="year" className="font-sans bg-gray-300">Publisher Year</option>
           </select>
+          <FiChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-white" />
         </div>
       </div>
 
